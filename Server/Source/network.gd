@@ -55,8 +55,9 @@ func host_game():
 	var host = NetworkedMultiplayerENet.new()
 	host.create_server(DEFAULT_PORT, MAX_PEERS)
 	get_tree().set_network_peer(host)
-	map =  OS.get_cmdline_args()[0]
-	map = map.to_lower()
+	if OS.get_cmdline_args().size() > 0:
+		map = OS.get_cmdline_args()[0]
+		map = map.to_lower()
 	load_map()
 	display_info()
 	load_map()
