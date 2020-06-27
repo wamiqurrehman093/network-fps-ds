@@ -64,10 +64,7 @@ remote func add_player(id, last_transform, player_name):
 	
 	var player = player_scene.instance()
 	
-#	var spawn_point = world.get_node("SpawnPoints/0")
-	
 	player.set_name(str(id))
-#	player.transform = spawn_point.transform
 	player.transform = last_transform
 	player.set_network_master(id)
 	player.set_player_name(player_name)
@@ -83,16 +80,7 @@ func player_connected(id):
 
 
 func player_disconnected(id):
-	print("Player: " + str(id) + " disconnected")
-	remove_player(id)
-
-
-func remove_player(id):
 	var root = get_tree().get_root()
 	var world = root.get_node(map)
 	world.get_node("Players/" + str(id)).queue_free()
 	print("player: " + str(id) + " left the game")
-
-
-remote func set_player_name():
-	pass
