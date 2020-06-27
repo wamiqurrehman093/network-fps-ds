@@ -4,7 +4,8 @@ extends Node
 var player_scene = load("res://Source/Player.tscn")
 
 const DEFAULT_PORT = 5000
-const MAX_PEERS = 10
+const MAX_PEERS = 50
+
 
 var player_name = 'server'
 var players = {}
@@ -52,12 +53,13 @@ func remove_player(id):
 
 
 func host_game():
-	var host = NetworkedMultiplayerENet.new()
-	host.create_server(DEFAULT_PORT, MAX_PEERS)
-	get_tree().set_network_peer(host)
 	if OS.get_cmdline_args().size() > 0:
 		map = OS.get_cmdline_args()[0]
 		map = map.to_lower()
+	var host = NetworkedMultiplayerENet.new()
+	host.create_server(DEFAULT_PORT, MAX_PEERS)
+	get_tree().set_network_peer(host)
+	
 	load_map()
 	display_info()
 	load_map()
@@ -68,9 +70,9 @@ func display_info():
 	for ip in IP.get_local_addresses():
 		if str(ip).split(".")[0] == "192":
 			print("Server ip: " + ip)
-			print("Server port: " + str(DEFAULT_PORT))
-			print("Server max players: " + str(MAX_PEERS))
-			print("Map: " + map)
+	print("Server port: " + str(DEFAULT_PORT))
+	print("Server max players: " + str(MAX_PEERS))
+	print("Map: " + map)
 
 
 func load_map():
@@ -85,7 +87,9 @@ func add_player(id):
 	var root = get_tree().get_root()
 	var world = root.get_node(map)
 	
-	var spawn_point = world.get_node("SpawnPoints/0")
+	randomize()
+	var spawn_index = randi() % 10
+	var spawn_point = world.get_node("SpawnPoints/" + str(spawn_index))
 	
 	var player = player_scene.instance()
 	
