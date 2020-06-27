@@ -1,0 +1,211 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Fonts/BaksoSapi.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://Source/Main.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 36
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=3]
+default_font = SubResource( 2 )
+
+[node name="Main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Header" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -208.5
+margin_top = 47.5288
+margin_right = 208.5
+margin_bottom = 124.529
+grow_horizontal = 2
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Network FPS"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="HBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -212.0
+margin_top = -126.373
+margin_right = 212.0
+margin_bottom = -72.373
+custom_constants/separation = 20
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Text" type="Label" parent="Name"]
+margin_top = 5.0
+margin_right = 104.0
+margin_bottom = 49.0
+rect_min_size = Vector2( 104, 44 )
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Name"
+align = 1
+valign = 1
+
+[node name="Value" type="LineEdit" parent="Name"]
+margin_left = 124.0
+margin_right = 424.0
+margin_bottom = 54.0
+rect_min_size = Vector2( 300, 0 )
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+text = "player"
+
+[node name="IP" type="HBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -212.0
+margin_top = -39.8892
+margin_right = 212.0
+margin_bottom = 14.1108
+custom_constants/separation = 20
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Text" type="Label" parent="IP"]
+margin_top = 5.0
+margin_right = 104.0
+margin_bottom = 49.0
+rect_min_size = Vector2( 104, 44 )
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "IP"
+align = 1
+valign = 1
+
+[node name="Value" type="LineEdit" parent="IP"]
+margin_left = 124.0
+margin_right = 424.0
+margin_bottom = 54.0
+rect_min_size = Vector2( 300, 0 )
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+text = "127.0.0.1"
+
+[node name="Port" type="HBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -212.0
+margin_top = 38.7812
+margin_right = 212.0
+margin_bottom = 92.7812
+custom_constants/separation = 20
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Text" type="Label" parent="Port"]
+margin_top = 5.0
+margin_right = 104.0
+margin_bottom = 49.0
+rect_min_size = Vector2( 104, 44 )
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Port"
+align = 1
+valign = 1
+
+[node name="Value" type="SpinBox" parent="Port"]
+margin_left = 124.0
+margin_right = 424.0
+margin_bottom = 54.0
+rect_min_size = Vector2( 300, 0 )
+size_flags_vertical = 5
+theme = SubResource( 3 )
+max_value = 10000.0
+value = 5000.0
+
+[node name="Buttons" type="HBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -208.501
+margin_top = 122.643
+margin_right = 215.499
+margin_bottom = 182.643
+custom_constants/separation = 20
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="quit_button" type="Button" parent="Buttons"]
+margin_right = 200.0
+margin_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 200, 60 )
+custom_fonts/font = SubResource( 2 )
+text = "Quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="join_button" type="Button" parent="Buttons"]
+margin_left = 220.0
+margin_right = 420.0
+margin_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 200, 60 )
+custom_fonts/font = SubResource( 2 )
+text = "Join"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Info" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -52.0
+margin_top = -131.535
+margin_right = 52.0
+margin_bottom = -87.5345
+grow_horizontal = 2
+rect_min_size = Vector2( 104, 44 )
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 0.368627, 0.368627, 1 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Buttons/quit_button" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Buttons/join_button" to="." method="_on_join_button_pressed"]
