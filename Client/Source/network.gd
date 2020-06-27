@@ -10,6 +10,8 @@ signal game_error(what)
 var player_scene = load("res://Source/Player.tscn")
 var map = "base"
 
+var players = {}
+
 
 func _ready():
 	get_tree().connect("network_peer_connected", self, "player_connected")
@@ -39,6 +41,7 @@ func end_game():
 		get_node("/root/base").queue_free()
 	
 	emit_signal("game_ended")
+	players = {}
 
 
 func join_game(ip, port, new_player_name):
@@ -68,6 +71,8 @@ remote func add_player(id, last_transform, player_name):
 	player.transform = last_transform
 	player.set_network_master(id)
 	player.set_player_name(player_name)
+	
+	players[id] = player_name
 	
 	world.get_node("Players").add_child(player)
 	

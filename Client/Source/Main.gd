@@ -7,9 +7,9 @@ func _ready():
 	network.connect("game_ended", self, "_on_game_ended")
 	network.connect("game_error", self, "_on_game_error")
 	
-	for ip in IP.get_local_addresses():
-		if str(ip).split(".")[0] == "192":
-			$IP/Value.text = str(ip)
+#	for ip in IP.get_local_addresses():
+#		if str(ip).split(".")[0] == "192":
+#			$IP/Value.text = str(ip)
 	
 	if OS.has_environment("USERNAME"):
 		$Name/Value.text = OS.get_environment("USERNAME")
@@ -52,8 +52,7 @@ func enable_ui(message="", connected=false):
 	$Name/Value.editable = true
 	$IP/Value.editable = true
 	$Port/Value.editable = true
-	if message:
-		$Info.text = message
+	$Info.text = message
 	if connected:
 		return
 	yield(get_tree().create_timer(3.0), "timeout")

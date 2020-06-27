@@ -7,12 +7,12 @@
 size = 64
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=9]
 size = 36
 font_data = ExtResource( 1 )
 
 [sub_resource type="Theme" id=3]
-default_font = SubResource( 2 )
+default_font = SubResource( 9 )
 
 [node name="Main" type="Control"]
 anchor_right = 1.0
@@ -49,9 +49,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -212.0
-margin_top = -126.373
+margin_top = -175.36
 margin_right = 212.0
-margin_bottom = -72.373
+margin_bottom = -121.36
 custom_constants/separation = 20
 __meta__ = {
 "_edit_group_": true,
@@ -63,7 +63,7 @@ margin_top = 5.0
 margin_right = 104.0
 margin_bottom = 49.0
 rect_min_size = Vector2( 104, 44 )
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Name"
 align = 1
@@ -75,7 +75,7 @@ margin_right = 424.0
 margin_bottom = 54.0
 rect_min_size = Vector2( 300, 0 )
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 9 )
 text = "player"
 
 [node name="IP" type="HBoxContainer" parent="."]
@@ -84,9 +84,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -212.0
-margin_top = -39.8892
+margin_top = -88.876
 margin_right = 212.0
-margin_bottom = 14.1108
+margin_bottom = -34.876
 custom_constants/separation = 20
 __meta__ = {
 "_edit_group_": true,
@@ -98,7 +98,7 @@ margin_top = 5.0
 margin_right = 104.0
 margin_bottom = 49.0
 rect_min_size = Vector2( 104, 44 )
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "IP"
 align = 1
@@ -110,8 +110,8 @@ margin_right = 424.0
 margin_bottom = 54.0
 rect_min_size = Vector2( 300, 0 )
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 2 )
-text = "127.0.0.1"
+custom_fonts/font = SubResource( 9 )
+text = "109.237.27.172"
 
 [node name="Port" type="HBoxContainer" parent="."]
 anchor_left = 0.5
@@ -119,9 +119,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -212.0
-margin_top = 38.7812
+margin_top = -10.2056
 margin_right = 212.0
-margin_bottom = 92.7812
+margin_bottom = 43.7944
 custom_constants/separation = 20
 __meta__ = {
 "_edit_group_": true,
@@ -133,7 +133,7 @@ margin_top = 5.0
 margin_right = 104.0
 margin_bottom = 49.0
 rect_min_size = Vector2( 104, 44 )
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Port"
 align = 1
@@ -155,9 +155,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -208.501
-margin_top = 122.643
+margin_top = 73.6563
 margin_right = 215.499
-margin_bottom = 182.643
+margin_bottom = 133.656
 custom_constants/separation = 20
 __meta__ = {
 "_edit_group_": true,
@@ -170,7 +170,7 @@ margin_bottom = 60.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 200, 60 )
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 9 )
 text = "Quit"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -183,7 +183,7 @@ margin_bottom = 60.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 200, 60 )
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 9 )
 text = "Join"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -195,13 +195,35 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -52.0
-margin_top = -131.535
+margin_top = -199.183
 margin_right = 52.0
-margin_bottom = -87.5345
+margin_bottom = -155.183
 grow_horizontal = 2
 rect_min_size = Vector2( 104, 44 )
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 1, 0.368627, 0.368627, 1 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ServerInfo" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -243.5
+margin_top = -136.521
+margin_right = 243.5
+margin_bottom = 1.4787
+grow_horizontal = 2
+rect_min_size = Vector2( 104, 44 )
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 1, 0.368627, 0.368627, 1 )
+text = "official dedicated server
+109.237.27.172
+5000"
 align = 1
 valign = 1
 __meta__ = {
