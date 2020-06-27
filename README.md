@@ -32,8 +32,13 @@ https://wamiqurrehman.wordpress.com/
 
 ### Contact Info
 E-mail: wamiqurrehman093@gmail.com
+
 Fiverr: https://www.fiverr.com/wamiqur
+
 Twitter: https://twitter.com/wamiq_rehman
+
 Linked-in: https://www.linkedin.com/in/wamiq-ur-...
+
 Facebook: https://www.facebook.com/wamiqurrehma...
+
 Instagram: https://www.instagram.com/wamiqurrehman/
