@@ -37,8 +37,8 @@ func _server_disconnected():
 
 
 func end_game():
-	if has_node("/root/base"):
-		get_node("/root/base").queue_free()
+	if has_node("/root/" + map):
+		get_node("/root/" + map).queue_free()
 	
 	emit_signal("game_ended")
 	players = {}

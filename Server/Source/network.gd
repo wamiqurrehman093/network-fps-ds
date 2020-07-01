@@ -9,7 +9,7 @@ const MAX_PEERS = 50
 
 var player_name = 'server'
 var players = {}
-var map = "base"
+var map = "psx_demo"
 var last_transform
 
 

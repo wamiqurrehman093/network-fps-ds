@@ -1,0 +1,37 @@
+[gd_scene format=2]
+
+[node name="psx_demo" type="Spatial"]
+
+[node name="SpawnPoints" type="Spatial" parent="."]
+
+[node name="0" type="Position3D" parent="SpawnPoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 22.0402, 5.36747 )
+
+[node name="1" type="Position3D" parent="SpawnPoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.87597, 22.0402, 0 )
+
+[node name="2" type="Position3D" parent="SpawnPoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.47234, 22.0402, 0 )
+
+[node name="3" type="Position3D" parent="SpawnPoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.48504, 22.0402, 4.87084 )
+
+[node name="4" type="Position3D" parent="SpawnPoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 22.0402, -5.83486 )
+
+[node name="5" type="Position3D" parent="SpawnPoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.60693, 22.0402, -6.61065 )
+
+[node name="6" type="Position3D" parent="SpawnPoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.67247, 22.0402, -5.68736 )
+
+[node name="7" type="Position3D" parent="SpawnPoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.17222, 22.0402, 4.65063 )
+
+[node name="8" type="Position3D" parent="SpawnPoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.29553, 22.0402, 5.74942 )
+
+[node name="9" type="Position3D" parent="SpawnPoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.15317, 22.0402, 2.28986 )
+
+[node name="Players" type="Spatial" parent="."]

@@ -1,0 +1,86 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/FinalModels/Plateau.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/FinalModels/sunset.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/FinalModels/Windmill.tscn" type="PackedScene" id=3]
+
+[sub_resource type="Environment" id=1]
+background_mode = 1
+background_color = Color( 0.941176, 0.972549, 1, 1 )
+ambient_light_color = Color( 1, 1, 1, 1 )
+
+[node name="psx_demo" type="Spatial"]
+
+[node name="SpawnPoints" type="Spatial" parent="."]
+
+[node name="0" type="Position3D" parent="SpawnPoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 22.0402, 5.36747 )
+
+[node name="1" type="Position3D" parent="SpawnPoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.87597, 22.0402, 0 )
+
+[node name="2" type="Position3D" parent="SpawnPoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.47234, 22.0402, 0 )
+
+[node name="3" type="Position3D" parent="SpawnPoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.48504, 22.0402, 4.87084 )
+
+[node name="4" type="Position3D" parent="SpawnPoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 22.0402, -5.83486 )
+
+[node name="5" type="Position3D" parent="SpawnPoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.60693, 22.0402, -6.61065 )
+
+[node name="6" type="Position3D" parent="SpawnPoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.67247, 22.0402, -5.68736 )
+
+[node name="7" type="Position3D" parent="SpawnPoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.17222, 22.0402, 4.65063 )
+
+[node name="8" type="Position3D" parent="SpawnPoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.29553, 22.0402, 5.74942 )
+
+[node name="9" type="Position3D" parent="SpawnPoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.15317, 22.0402, 2.28986 )
+
+[node name="Players" type="Spatial" parent="."]
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 0.735719, 0, 0.677287, 0, 1, 0, -0.677287, 0, 0.735719, 8.39823, 24.6076, 7.60234 )
+current = true
+far = 256.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 1 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( -0.965033, 0.0760594, -0.25085, -0.234971, -0.675186, 0.699223, -0.116188, 0.733716, 0.669449, -1.35359, 1.07104, 1.66882 )
+shadow_enabled = true
+
+[node name="sunset" parent="." instance=ExtResource( 2 )]
+transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 14.4784, 0 )
+
+[node name="Ground" type="Spatial" parent="."]
+
+[node name="0" parent="Ground" instance=ExtResource( 1 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0, 0 )
+
+[node name="1" parent="Ground" instance=ExtResource( 1 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 19.8343, 0, 47.0555 )
+
+[node name="2" parent="Ground" instance=ExtResource( 1 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 61.4484, 0, 29.634 )
+
+[node name="3" parent="Ground" instance=ExtResource( 1 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 108.323, -9.09258, 79.9093 )
+
+[node name="Mills" type="Spatial" parent="."]
+
+[node name="0" parent="Mills" instance=ExtResource( 3 )]
+transform = Transform( 0.0990071, 0, 0.995087, 0, 1, 0, -0.995087, 0, 0.0990071, -4.5227, 19.2706, -3.71548 )
+
+[node name="1" parent="Mills" instance=ExtResource( 3 )]
+transform = Transform( -0.851059, 0, 0.525071, 0, 1, 0, -0.525071, 0, -0.851059, 20.0974, 18.8839, 47.9817 )
+
+[node name="2" parent="Mills" instance=ExtResource( 3 )]
+transform = Transform( -0.367654, 0, -0.929963, 0, 1, 0, 0.929963, 0, -0.367654, 98.2311, 10.3247, 70.6752 )
