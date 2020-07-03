@@ -19,6 +19,8 @@ export var mouse_sensitivity = 0.003
 var last_motion
 var last_transform
 
+onready var knight = $knight
+
 
 func _ready():
 	$HUD/Panel.hide()
@@ -56,7 +58,7 @@ func _unhandled_input(event):
 	if mouse_motion and mouse_captured:
 		rotate_y(-event.relative.x * mouse_sensitivity)
 		$Pivot.rotate_x(-event.relative.y * mouse_sensitivity)
-		$Pivot.rotation.x = clamp($Pivot.rotation.x, -0.8, 0.8)
+		$Pivot.rotation.x = clamp($Pivot.rotation.x, -0.8, 0.4)
 
 
 func _physics_process(delta):
@@ -88,8 +90,18 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("jump") and is_on_floor():
 			motion.y = jump_power
 		
+		var anim
+		
+		if motion.x != 0 or motion.z != 0:
+			anim = "walk"
+		else:
+			anim = "idle"
+		
+		play_anim(anim)
+		rset("puppet_motion", motion)
+		
 		if last_motion != motion:
-			rset("puppet_motion", motion)
+			rpc('play_anim', anim)
 		if last_transform != transform:
 			rset("puppet_transform", transform)
 		
@@ -143,3 +155,7 @@ func handle_input():
 		$HUD/Players.show()
 	if Input.is_action_just_released("tab"):
 		$HUD/Players.hide()
+
+
+puppet func play_anim(anim):
+	knight.play_anim(anim)
