@@ -6,8 +6,8 @@
 ### <p style="text-align: center;"> [Watch The Demo Here](https://www.youtube.com/watch?v=CpFdEsAKAc4&feature=youtu.be) </p>
 
 ![alt text](https://i.imgur.com/Rodz8QG.png)
-![alt text](https://i.imgur.com/ny90Qs4.png)
 ![alt text](https://i.imgur.com/F6EP75l.png)
+![alt text](https://i.imgur.com/Z8MZhoI.png)
 
 ## Client Usage
 
