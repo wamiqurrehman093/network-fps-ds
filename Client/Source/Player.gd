@@ -20,6 +20,7 @@ var last_motion
 var last_transform
 
 onready var knight = $knight
+var last_anim = 'idle'
 
 
 func _ready():
@@ -90,7 +91,7 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("jump") and is_on_floor():
 			motion.y = jump_power
 		
-		var anim
+		var anim = 'idle'
 		
 		if motion.x != 0 or motion.z != 0:
 			anim = "walk"
@@ -98,10 +99,11 @@ func _physics_process(delta):
 			anim = "idle"
 		
 		play_anim(anim)
-		rset("puppet_motion", motion)
-		
-		if last_motion != motion:
+		if last_anim != anim:
 			rpc('play_anim', anim)
+		last_anim = anim
+		if last_motion != motion:
+			rset("puppet_motion", motion)
 		if last_transform != transform:
 			rset("puppet_transform", transform)
 		
